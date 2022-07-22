@@ -6,11 +6,13 @@ const usePassport = require('./config/passport')
 const flash = require('connect-flash')
 const routes = require('./routes')
 const app = express()
-const PORT = process.env.PORT
 
 if (process.env.NODE_ENV !== 'production') {
   require('dotenv').config()
 }
+const PORT = process.env.PORT
+
+
 app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
 app.set('view engine', 'hbs')
 app.use(express.urlencoded({ extended: true }))
